@@ -5,3 +5,4 @@ notebooks/.ipynb_checkpoints/*
 notebooks/gan-epoch=399-step=26000.ckpt
 notebooks/gas_supply.csv
 notebooks/lstm-epoch=14-step=450.ckpt
+notebooks/lightning_logs/*

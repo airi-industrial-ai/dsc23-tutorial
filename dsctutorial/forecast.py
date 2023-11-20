@@ -114,6 +114,7 @@ class LSTMForecaster:
         self.cov_scaler = StandardScaler()
         self.model = LSTMModule.load_from_checkpoint(
             path,
+            map_location='cuda' if torch.cuda.is_available() else 'cpu',
             target_dim=target.shape[1],
             cov_dim=cov.shape[1],
             hidden_dim=self.hidden_dim,

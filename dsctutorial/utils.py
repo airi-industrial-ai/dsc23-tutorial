@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import torch
 
 def positional_encoding(index, freqs):
     encoding = []
@@ -31,6 +32,7 @@ def load_from_checkpoint(self, path):
     )
     self.model = GANModule.load_from_checkpoint(
         path,
+        map_location='cuda' if torch.cuda.is_available() else 'cpu',
         gen=gen,
         disc=disc,
         latent_dim=self.latent_dim,

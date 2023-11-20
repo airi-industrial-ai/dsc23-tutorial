@@ -1,8 +1,10 @@
+import os
 import gdown
 import pandas as pd
 
 def load_gas_supply():
-    gdown.download('https://drive.google.com/uc?id=1kGp65UabcFcKAHSM4K2MgkPAYgbyhQj5', 'gas_supply.csv')
+    if not os.path.exists('gas_supply.csv'):
+        gdown.download('https://drive.google.com/uc?id=1kGp65UabcFcKAHSM4K2MgkPAYgbyhQj5', 'gas_supply.csv')
     target = pd.read_csv(
         'gas_supply.csv',
         skiprows=5,

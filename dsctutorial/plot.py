@@ -11,11 +11,10 @@ def hist2samp(target0, target1, label0, label1, nbins=20):
     plt.grid(False)
     plt.show()
 
-def pacf2samp(target0, target1, label0, label1):
+def pacf2samp(target0, target1, label0, label1, nlags=40):
     plt.figure(figsize=(6, 7))
     ax = plt.subplot(2, 1, 1)
-    plot_pacf(target0, lags=40, title=f'PACF {label0}', ax=ax)
+    plot_pacf(target0, lags=nlags, title=f'PACF {label0}', ax=ax)
     ax = plt.subplot(2, 1, 2)
-    plot_pacf(target1, lags=40, title=f'PACF {label1}', ax=ax)
+    plot_pacf(target1, lags=nlags, title=f'PACF {label1}', ax=ax)
     plt.show()
-    
